@@ -33,37 +33,37 @@ public class Edit_Service_Territory {
 		driver.get("https://login.salesforce.com");
 		
 		driver.findElement(By.id("username")).sendKeys("mars@testleaf.com");
-		driver.findElementById("password").sendKeys("BootcampSel$123");
-		driver.findElementByName("Login").click();
+		driver.findElement(By.id("password")).sendKeys("BootcampSel$123");
+		driver.findElement(By.name("Login")).click();
 		Thread.sleep(2000);
 		//click the App launcher
-		driver.findElementByXPath("//div[@class='slds-icon-waffle']").click();
+		driver.findElement(By.xpath("//div[@class='slds-icon-waffle']")).click();
 		
 		//click view all
-		driver.findElementByXPath("//button[text()='View All']").click();
-		WebElement serviceTertry = driver.findElementByXPath("//p[text()='Service Territories']");
+		driver.findElement(By.xpath("//button[text()='View All']")).click();
+		WebElement serviceTertry = driver.findElement(By.xpath("//p[text()='Service Territories']"));
 		driver.executeScript("arguments[0].click();", serviceTertry);
 		Thread.sleep(2000);
-		driver.findElementByXPath("(//div[contains(@class,'forceVirtualAction')])[1]//a").click();
+		driver.findElement(By.xpath("(//div[contains(@class,'forceVirtualAction')])[1]//a")).click();
 		//Actions act = new Actions(driver);
 		//act.moveToElement(driver.findElementByXPath("//div[text()='Edit']")).click();
 		Thread.sleep(2000);
-		driver.findElementByXPath("//a[@title='Edit']").click();
+		driver.findElement(By.xpath("//a[@title='Edit']")).click();
 	
-		String CreatedBy = driver.findElementByXPath("(//span[text()='mars testleaf'])[2]").getText();
+		String CreatedBy = driver.findElement(By.xpath("(//span[text()='mars testleaf'])[2]")).getText();
 		System.out.println(CreatedBy);
-		String ModifyBy = driver.findElementByXPath("(//span[text()='mars testleaf'])[3]").getText();
+		String ModifyBy = driver.findElement(By.xpath("(//span[text()='mars testleaf'])[3]")).getText();
 		System.out.println(ModifyBy);
-		String Owner = driver.findElementByXPath("(//span[text()='mars testleaf'])[3]").getText();
+		String Owner = driver.findElement(By.xpath("(//span[text()='mars testleaf'])[3]")).getText();
 		System.out.println(Owner);
 		
 		Assert.assertEquals("mars testleaf", CreatedBy);
 		Assert.assertEquals("mars testleaf", ModifyBy);
 		Assert.assertEquals("mars testleaf", Owner);
-		driver.findElementByXPath("//input[@placeholder='Country']").clear();
-		driver.findElementByXPath("//input[@placeholder='Country']").sendKeys("North America");
-		driver.findElementByXPath("//span[contains(text(),'New')]/following::span[text()='Save']").click();
-		String text = driver.findElementByXPath("//span[@class='slds-truncate uiOutputDateTime']").getText();
+		driver.findElement(By.xpath("//input[@placeholder='Country']")).clear();
+		driver.findElement(By.xpath("//input[@placeholder='Country']")).sendKeys("North America");
+		driver.findElement(By.xpath("//span[contains(text(),'New')]/following::span[text()='Save']")).click();
+		String text = driver.findElement(By.xpath("//span[@class='slds-truncate uiOutputDateTime']")).getText();
 		System.out.println(text);
 	}
 	

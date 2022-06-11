@@ -2,16 +2,41 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="30032" started-at="2022-05-21T12:41:45Z" finished-at="2022-05-21T12:42:15Z">
+  <suite name="Suite" duration-ms="35181" started-at="2022-06-11T11:33:47Z" finished-at="2022-06-11T11:34:22Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="30032" started-at="2022-05-21T12:41:45Z" finished-at="2022-05-21T12:42:15Z">
-      <class name="week2.Delete_service_Territory_S06_11">
-        <test-method status="PASS" signature="service_Territory_Deletion()[pri:0, instance:week2.Delete_service_Territory_S06_11@3967e60c]" name="service_Territory_Deletion" duration-ms="29971" started-at="2022-05-21T12:41:45Z" finished-at="2022-05-21T12:42:15Z">
+    <test name="TestngServiceTerritory" duration-ms="35181" started-at="2022-06-11T11:33:47Z" finished-at="2022-06-11T11:34:22Z">
+      <class name="week1.Create_Service_Territories">
+        <test-method status="PASS" signature="browserLaunch(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:week1.Create_Service_Territories@3f197a46]" name="browserLaunch" is-config="true" duration-ms="14950" started-at="2022-06-11T11:33:47Z" finished-at="2022-06-11T11:34:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://login.salesforce.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mars@testleaf.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[BootcampSel$123]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- service_Territory_Deletion -->
-      </class> <!-- week2.Delete_service_Territory_S06_11 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- browserLaunch -->
+        <test-method status="PASS" signature="service_Territory_Creation()[pri:0, instance:week1.Create_Service_Territories@3f197a46]" name="service_Territory_Creation" duration-ms="19812" started-at="2022-06-11T11:34:02Z" finished-at="2022-06-11T11:34:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- service_Territory_Creation -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:week1.Create_Service_Territories@3f197a46]" name="tearDown" is-config="true" duration-ms="372" started-at="2022-06-11T11:34:22Z" finished-at="2022-06-11T11:34:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- week1.Create_Service_Territories -->
+    </test> <!-- TestngServiceTerritory -->
+  </suite> <!-- Suite -->
 </testng-results>
