@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <parameter name="password" value="BootcampSel$123"/>
+  <parameter name="url" value="https://login.salesforce.com"/>
+  <parameter name="username" value="mars@testleaf.com"/>
+  <test thread-count="5" name="TestngServiceTerritory(failed)">
+    <classes>
+      <class name="week1.Create_Service_Territories">
+        <methods>
+          <include name="service_Territory_Creation"/>
+          <include name="browserLaunch"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- week1.Create_Service_Territories -->
+    </classes>
+  </test> <!-- TestngServiceTerritory(failed) -->
+</suite> <!-- Failed suite [Suite] -->

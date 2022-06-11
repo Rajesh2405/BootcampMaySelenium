@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+ <parameter name="url" value="https://login.salesforce.com"></parameter>
+  <parameter name="username" value="mars@testleaf.com"></parameter>
+  <parameter name="password" value="BootcampSel$123"></parameter>
+  
+  <test thread-count="5" name="TestngServiceTerritory">
+ 
+    <classes>
+      <!-- <class name="week1.Edit_Service_Territory"/>
+      <class name="week2.CreateParentTerritory_S06_11"/>  
+      <class name="week2.Delete_service_Territory_S06_11"/> -->
+      <class name="week1.Create_Service_Territories"/>
+    </classes>
+  </test> <!-- TestngServiceTerritory -->
+</suite> <!-- Suite -->
