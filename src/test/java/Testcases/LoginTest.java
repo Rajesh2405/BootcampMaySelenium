@@ -9,12 +9,15 @@ import Pages.Loginpage;
 public class LoginTest extends ProjectSpecificmethods{
 	
 	
-	
 	@Test
 	public void loginpageTest() {
 		Loginpage lp = new Loginpage();
 		
-		lp.enterusername().enterPwd().clickLoginbutton();
+		lp.enterusername().enterPwd().clickLoginbutton()
+		.clickApplauncher()
+		.clickviewAll()
+		.clickserviceTerritory()
+		.clickNewoption();
 	}
 
 }

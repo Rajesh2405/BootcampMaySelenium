@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="week1.Create_Service_Territories">
+      <class name="Testcases.LoginTest">
         <methods>
-          <include name="service_Territory_Creation"/>
-          <include name="browserLaunch"/>
-          <include name="tearDown"/>
+          <include name="launchBrowser"/>
+          <include name="closeBrowser"/>
+          <include name="loginpageTest"/>
         </methods>
-      </class> <!-- week1.Create_Service_Territories -->
+      </class> <!-- Testcases.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
