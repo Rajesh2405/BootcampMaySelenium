@@ -1,5 +1,6 @@
 package week2;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
@@ -10,32 +11,43 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class CreateParentTerritory_S06_11 {
 	
+	public ChromeDriver driver;
+	
+	@Parameters({"url","username","password"})
+	@BeforeMethod
+	public void browserLaunch(String url, String uname, String pwd) {
+		
+		WebDriverManager.chromedriver().setup();
+		ChromeOptions option = new ChromeOptions();
+		option.addArguments("--disable-notifications");
+		driver = new ChromeDriver(option);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
+		// URL launched
+		driver.get(url);
+		driver.findElement(By.id("username")).sendKeys(uname);
+		driver.findElement(By.id("password")).sendKeys(pwd);
+		driver.findElement(By.id("Login")).click();
+	}
+	
 	@Test
 	public void parentTerritoryCreation() throws InterruptedException {
 		
-		WebDriverManager.chromedriver().setup();
-		
-		ChromeOptions option = new ChromeOptions();
-		option.addArguments("--disable-notifications");
-		
-		WebDriver driver = new ChromeDriver(option);
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(3000,TimeUnit.SECONDS);
-		//driver.manage().timeouts().pageLoadTimeout(2000, TimeUnit.SECONDS);
-		
-		driver.get("https://login.salesforce.com");
-		driver.findElement(By.id("username")).sendKeys("mars@testleaf.com");
-		driver.findElement(By.id("password")).sendKeys("BootcampSel$123");
-		driver.findElement(By.name("Login")).click();
-		
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[@class='slds-icon-waffle']")).click();
+		WebDriverWait wait =new WebDriverWait(driver,Duration.ofSeconds(5));
+		WebElement appLauncher = driver.findElement(By.xpath("//div[@class='slds-icon-waffle']"));
+		wait.until(ExpectedConditions.visibilityOf(appLauncher)).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[text()='View All']")).click();
 		WebElement serviceTerritory = driver.findElement(By.xpath("//p[text()='Service Territories']"));
@@ -65,6 +77,13 @@ public class CreateParentTerritory_S06_11 {
 		String nwlycreatdPT = driver.findElement(By.xpath("//span[contains(@class,'toast')]")).getText();
 		System.out.println(nwlycreatdPT);
 		Assert.assertTrue(nwlycreatdPT.contains("created"));
+	}
+	
+	@AfterMethod
+	public void tearDown()  {
+		
+		driver.close();
+		
 	}
 	
 	

@@ -8,8 +8,8 @@
   <test thread-count="5" name="TestngServiceTerritory">
  
     <classes>
-      <!-- <class name="week1.Edit_Service_Territory"/>
-      <class name="week2.CreateParentTerritory_S06_11"/>  
+     <!--  <class name="week1.Edit_Service_Territory"/> -->
+      <!-- <class name="week2.CreateParentTerritory_S06_11"/>  
       <class name="week2.Delete_service_Territory_S06_11"/> -->
       <class name="week1.Create_Service_Territories"/>
     </classes>

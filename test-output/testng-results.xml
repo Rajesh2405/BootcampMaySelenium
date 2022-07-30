@@ -2,24 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="26068" started-at="2022-06-11T12:49:29Z" finished-at="2022-06-11T12:49:56Z">
+  <suite name="Default suite" duration-ms="47080" started-at="2022-07-27T06:15:35Z" finished-at="2022-07-27T06:16:22Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="26068" started-at="2022-06-11T12:49:29Z" finished-at="2022-06-11T12:49:56Z">
-      <class name="Testcases.LoginTest">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:Testcases.LoginTest@21de60b4]" name="launchBrowser" is-config="true" duration-ms="5966" started-at="2022-06-11T12:49:30Z" finished-at="2022-06-11T12:49:36Z">
+    <test name="Default test" duration-ms="47080" started-at="2022-07-27T06:15:35Z" finished-at="2022-07-27T06:16:22Z">
+      <class name="sprint3.AdministratorCertifications_S06_68">
+        <test-method status="PASS" signature="verifyAdministratorCertification()[pri:0, instance:sprint3.AdministratorCertifications_S06_68@9353778]" name="verifyAdministratorCertification" duration-ms="47019" started-at="2022-07-27T06:15:35Z" finished-at="2022-07-27T06:16:22Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="loginpageTest()[pri:0, instance:Testcases.LoginTest@21de60b4]" name="loginpageTest" duration-ms="15688" started-at="2022-06-11T12:49:36Z" finished-at="2022-06-11T12:49:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginpageTest -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:Testcases.LoginTest@21de60b4]" name="closeBrowser" is-config="true" duration-ms="4361" started-at="2022-06-11T12:49:51Z" finished-at="2022-06-11T12:49:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- Testcases.LoginTest -->
+        </test-method> <!-- verifyAdministratorCertification -->
+      </class> <!-- sprint3.AdministratorCertifications_S06_68 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

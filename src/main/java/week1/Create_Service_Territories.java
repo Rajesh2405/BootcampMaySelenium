@@ -1,6 +1,7 @@
 package week1;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -31,7 +32,7 @@ public class Create_Service_Territories {
 		option.addArguments("--disable-notifications");
 		driver = new ChromeDriver(option);
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		// URL launched
 		driver.get(url);
 		driver.findElement(By.id("username")).sendKeys(uname);
@@ -62,7 +63,8 @@ public class Create_Service_Territories {
 		driver.findElement(By.xpath("//span[@title='New Operating Hours']")).click();
 		driver.findElement(By.xpath("(//input[@class=' input'])[2]")).sendKeys("RajeshKumar");
 		driver.findElement(By.xpath("//h2[text()='New Operating Hours']//following::button[@type='button'][@title='Save']")).click();
-		Thread.sleep(2000);
+		WebElement opHourtoast = driver.findElement(By.xpath("//span[contains(@class,'toastMessage')][contains(text(),'Operating Hours')]"));
+		wait.until(ExpectedConditions.invisibilityOf(opHourtoast));
 		driver.findElement(By.xpath("//h2[text()='New Service Territory']//following::input[@type='checkbox']")).click();
 		driver.findElement(By.xpath("//input[@placeholder='City']")).sendKeys("Chennai");
 		driver.findElement(By.xpath("//input[@placeholder='State/Province']")).sendKeys("TamilNadu");
@@ -71,7 +73,9 @@ public class Create_Service_Territories {
 		driver.findElement(By.xpath("//h2[text()='New Service Territory']//following::button[@type='button'][@title='Save']")).click();
 		String poptext = driver.findElement(By.xpath("//span[contains(@class,'toastMessage')][contains(text(),'Service Territory')]")).getText();
 		System.out.println(poptext);
-		Assert.assertTrue(poptext.contains("created"));
+		String Name = poptext.split(" ")[2].toString();
+		System.out.println(Name);
+		Assert.assertTrue(poptext.equalsIgnoreCase("Service Territory "+Name+" was created."));
 		
 		
 	}

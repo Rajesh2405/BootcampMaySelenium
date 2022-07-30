@@ -3,13 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Testcases.LoginTest">
+      <class name="sprint3.AdministratorCertifications_S06_68">
         <methods>
-          <include name="launchBrowser"/>
-          <include name="closeBrowser"/>
-          <include name="loginpageTest"/>
+          <include name="verifyAdministratorCertification"/>
         </methods>
-      </class> <!-- Testcases.LoginTest -->
+      </class> <!-- sprint3.AdministratorCertifications_S06_68 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
